@@ -30,7 +30,7 @@ export const Register = async (req, res, next) => {
     const accountNumber = Math.floor(1000000000 + Math.random() * 9000000000);
     try {
         const account = await db_service.create({ model: bankAccountModel, data: { userId: user._id, accountNumber } });
-        return successResponse({ res, status: 201, message: "User and bank account created successfully", data: { user, account } });
+        return successResponse({ res, status: 201, message: "User and bank account created successfully" });
 
     } catch (err) {
 
